@@ -41,8 +41,8 @@ CREATE TABLE JogadorPartida(id_jogador integer, cod_partida integer, data date, 
     FOREIGN KEY (cod_partida) REFERENCES Partida(cod_partida)
 )Engine=innoDB;
 
-#Turno(id_turno, hp_jogador, qtde_cartas,#cod_partida)
-CREATE TABLE Turno(id_turno integer not null auto_increment, id_jogador_1 integer, id_jogador_2 integer, hp_jogador_1 integer, hp_jogador_2 integer, qtde_cartas integer, cod_partida integer,
+#Turno(id_turno, id_jogador_1, id_jogador_2, hp_jogador_1, hp_jogador_2, #cod_partida)
+CREATE TABLE Turno(id_turno integer not null auto_increment, id_jogador_1 integer, id_jogador_2 integer, hp_jogador_1 integer, hp_jogador_2 integer, cod_partida integer,
 	PRIMARY KEY (id_turno),
     FOREIGN KEY (cod_partida) REFERENCES Partida(cod_partida),
     FOREIGN KEY (id_jogador_1) REFERENCES Jogador(id_jogador),
