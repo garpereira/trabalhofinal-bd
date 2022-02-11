@@ -6,10 +6,10 @@ INSERT INTO Jogador
     (null, 'Ryo Bakura', 'Ryo', 16, 2, 7),
     (null, 'Mai Valentine', 'Mai', 18, 5, 4),
     (null, 'Katsuya Jounouchi', 'Jou', 17, 5, 4),
-    (null, 'Malik Ishtar', 'Malik', 18, 6, 3),
+    (null, 'Malik Ishtar', 'Malik', 18, 4, 5),
     (null, 'Ryou Bakura', 'Ryou', 15, 3, 6),
-    (null, 'Pegasus J. Crawford', 'Pegasus', 20, 7, 2),
-    (null, 'Anzu Mazaki', 'Ma', 16, 3, 6),
+    (null, 'Pegasus J. Crawford', 'Pegasus', 20, 6, 3),
+    (null, 'Anzu Mazaki', 'Ma', 16, 2, 7),
     (null, 'Mokuba Kaiba', 'Moku', 12, 1, 8);
 
 #Deck(id_deck, nro_partidas, qtde_vitorias, qtde_derrotas, #id_jogador)
@@ -249,7 +249,21 @@ INSERT INTO Carta
     
     
     
-    
+#um id para cada tipo de carta sejam elas (Normal, Continua, Campo, Rapida, Resposta, Fusao, Ritual, Efeito, Sincro, Xyz, Pendulo)
+#id_tipo_carta, tipo_carta
+INSERT INTO TiposCarta
+	VALUES
+    (null, 'Normal'),
+    (null, 'Continua'),
+    (null, 'Campo'),
+    (null, 'Rapida'),
+    (null, 'Resposta'),
+    (null, 'Fusao'),
+    (null, 'Ritual'),
+    (null, 'Efeito'),
+    (null, 'Sincro'),
+    (null, 'Xyz'),
+    (null, 'Pendulo');
     
 
 
