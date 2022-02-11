@@ -12,8 +12,8 @@ CREATE TABLE Deck(id_deck integer not null auto_increment, nro_partidas integer,
 	FOREIGN KEY (id_jogador) REFERENCES Jogador(id_jogador)
 )Engine=innoDB;
 
-#Carta(cod_serie, id_carta, nome_carta, nro_edicao, descricao, #id_deck)
-CREATE TABLE Carta(id_carta integer, nome_carta varchar(20), nro_edicao integer, descricao varchar(100), id_deck integer,
+#Carta(id_carta, nome_carta, nro_edicao, descricao, #id_deck)
+CREATE TABLE Carta(id_carta integer, nome_carta varchar(40), nro_edicao integer, descricao varchar(500), id_deck integer,
     PRIMARY KEY (id_carta),
 	FOREIGN KEY (id_deck) REFERENCES Deck(id_deck)
 )Engine=innoDB;
