@@ -6,3 +6,11 @@ Esta trabalho foi desenvolvido com a colega de turma Thais Siqueira, utilizando 
 
 O objetivo dessa relação (Banco de dados e Yu-Gi-Oh) é tornar possível a visualização das partidas de um modo mais estatístico, gerando então tabelas relacionais que apresentam dados relevantes para a análise de jogadores, cartas, decks, estatísticas por tipos de arenas, etc.
 
+
+
+Bibliografia:
+
+
+https://universoanimanga.blogspot.com/p/yu-gi-oh.html, acesso em 07/02/2022;
+https://yugioh.fandom.com/es/wiki/Carta;
+
