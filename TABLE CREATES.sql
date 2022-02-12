@@ -32,18 +32,24 @@ CREATE TABLE Carta(id_carta integer not null auto_increment, nome_carta varchar(
     FOREIGN KEY (id_tipo) REFERENCES TiposCarta(id_tipo_carta)
 )Engine=innoDB;
 
-#Partida(cod_partida, tipo_campo, qtd_turnos, resultado)
-CREATE TABLE Partida(cod_partida integer not null auto_increment, tipo_campo varchar(10), qtd_turnos integer, vencedor integer, perdedor integer,
+#Resultado(cod_resultado, #perdedor, #vencedor)
+CREATE TABLE Resultado(cod_resultado integer auto_increment, perdedor integer, vencedor integer,
+	PRIMARY KEY (cod_resultado),
+    FOREIGN KEY (perdedor) REFERENCES Jogador(id_jogador),
+    FOREIGN KEY (vencedor) REFERENCES Jogador(id_jogador)
+)Engine=innoDB;
+
+#Partida(cod_partida, tipo_campo, qtd_turnos, data, hora, #resultado)
+CREATE TABLE Partida(cod_partida integer auto_increment, tipo_campo varchar(10), qtd_turnos integer, data date, hora time, resultado integer not null,
 	PRIMARY KEY (cod_partida),
-    FOREIGN KEY (vencedor) REFERENCES Jogador(id_jogador),
-    FOREIGN KEY (perdedor) REFERENCES Jogador(id_jogador)
+    FOREIGN KEY (resultado) REFERENCES Resultado(cod_resultado)
 )Engine=innoDB;
 
 #PartidaDeck(#id_deck, #cod_partida)
 CREATE TABLE PartidaDeck(id_deck integer, cod_partida integer,
 	PRIMARY KEY (id_deck),
 	FOREIGN KEY (id_deck) REFERENCES Deck(id_deck),
-    FOREIGN KEY (cod_partida) REFERENCES Partida(cod_partida)
+  FOREIGN KEY (cod_partida) REFERENCES Partida(cod_partida)
 )Engine=innoDB;
 
 #Turno(id_turno, id_jogador_1, id_jogador_2, hp_jogador_1, hp_jogador_2, #cod_partida)
