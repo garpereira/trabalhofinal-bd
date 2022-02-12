@@ -47,8 +47,9 @@ CREATE TABLE Partida(cod_partida integer auto_increment, tipo_campo varchar(10),
 
 #PartidaDeck(#id_deck, #cod_partida)
 CREATE TABLE PartidaDeck(id_deck integer, cod_partida integer,
+	PRIMARY KEY (id_deck),
 	FOREIGN KEY (id_deck) REFERENCES Deck(id_deck),
-    FOREIGN KEY (cod_partida) REFERENCES Partida(cod_partida)
+  FOREIGN KEY (cod_partida) REFERENCES Partida(cod_partida)
 )Engine=innoDB;
 
 #Turno(id_turno, id_jogador_1, id_jogador_2, hp_jogador_1, hp_jogador_2, #cod_partida)
