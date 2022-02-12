@@ -18,11 +18,18 @@ CREATE TABLE Carta(id_carta integer, nome_carta varchar(40), nro_edicao integer,
 	FOREIGN KEY (id_deck) REFERENCES Deck(id_deck)
 )Engine=innoDB;
 
+<<<<<<< HEAD
 #Partida(cod_partida, tipo_campo, qtd_turnos, resultado)
 CREATE TABLE Partida(cod_partida integer not null auto_increment, tipo_campo varchar(10), qtd_turnos integer, vencedor integer, perdedor integer,
 	PRIMARY KEY (cod_partida),
     FOREIGN KEY (vencedor) REFERENCES Jogador(id_jogador),
     FOREIGN KEY (perdedor) REFERENCES Jogador(id_jogador)
+=======
+#Partida(cod_partida, tipo_campo, qtd_turnos, #resultado)
+CREATE TABLE Partida(cod_partida integer auto_increment, tipo_campo varchar(10), qtd_turnos integer, resultado integer not null,
+	PRIMARY KEY (cod_partida)
+    FOREIGN KEY (resultado) REFERENCES Resultado(cod_resultado)
+>>>>>>> 8e9e039 (Adiciona tabela Resultado e modifica partida)
 )Engine=innoDB;
 
 #PartidaDeck(#id_deck, #cod_partida)
@@ -41,8 +48,20 @@ CREATE TABLE JogadorPartida(id_jogador integer, cod_partida integer, data date, 
     FOREIGN KEY (cod_partida) REFERENCES Partida(cod_partida)
 )Engine=innoDB;
 
+<<<<<<< HEAD
 #Turno(id_turno, id_jogador_1, id_jogador_2, hp_jogador_1, hp_jogador_2, #cod_partida)
 CREATE TABLE Turno(id_turno integer not null auto_increment, id_jogador_1 integer, id_jogador_2 integer, hp_jogador_1 integer, hp_jogador_2 integer, cod_partida integer,
+=======
+#Resultado(cod_resultado, #perdedor, #vencedor)
+CREATE TABLE Resultado(cod_resultado integer auto_increment, #perdedor varchar(20), #vencedor varchar(20),
+	PRIMARY KEY (cod_resultado),
+    FOREIGN KEY (perdedor) REFERENCES Jogador(nome),
+    FOREIGN KEY (vencedor) REFERENCES Jogador(nome)
+)Engine=innoDB;
+
+#Turno(id_turno, hp_jogador, qtde_cartas,#cod_partida)
+CREATE TABLE Turno(id_turno integer not null auto_increment, id_jogador_1 integer, id_jogador_2 integer, hp_jogador_1 integer, hp_jogador_2 integer, qtde_cartas integer, cod_partida integer,
+>>>>>>> c419372 (Adiciona tabela Resultado e modifica partida)
 	PRIMARY KEY (id_turno),
     FOREIGN KEY (cod_partida) REFERENCES Partida(cod_partida),
     FOREIGN KEY (id_jogador_1) REFERENCES Jogador(id_jogador),
